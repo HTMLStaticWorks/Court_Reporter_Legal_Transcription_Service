@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Court Reporter & Legal Transcription</title>
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='75' font-size='75' font-weight='bold' fill='%231E5EFF'>⚖</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <link rel="stylesheet" href="css/rtl.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            cursor: pointer;
+            border: 1px solid var(--border-color);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px;
+            background: var(--accent-primary);
+            color: #fff;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-overlay h4 {
+            color: #fff;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+    </style>
+
+    <link rel="canonical" href="https://lexistranscripts.com/gallery.html">
+</head>
+
+<body dir="ltr">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <i class="fa-solid fa-scale-balanced" style="color: var(--accent-primary);"></i>
+                <span>LexisTranscripts</span>
+            </a>
+
+            <ul class="nav-links">
+                <li class="desktop-only nav-item">
+                    <a href="#" class="">Home <i class="fa-solid fa-chevron-down"
+                            style="font-size: 10px; margin-left: 4px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="index.html">Home 1</a>
+                        <a href="home-2.html">Home 2</a>
+                    </div>
+                </li>
+                <li class="mobile-only"><a href="index.html">Home 1</a></li>
+                <li class="mobile-only"><a href="home-2.html">Home 2</a></li>
+                <li><a href="about.html" class="">About</a></li>
+                <li><a href="services.html" class="">Services</a></li>
+                <li><a href="transcription-options.html" class="">Options</a></li>
+                <li><a href="turnaround-times.html" class="">Turnaround</a></li>
+                <li><a href="industries.html" class="">Industries</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="contact.html" class="">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <a href="#" id="dark-mode-toggle" title="Toggle Light/Dark"
+                    style="color: var(--text-secondary); text-decoration: none;"><i class="fa-solid fa-moon"></i></a>
+                <a href="#" id="rtl-toggle" title="Toggle RTL"
+                    style="color: var(--text-secondary); text-decoration: none;"><i
+                        class="fa-solid fa-right-left"></i></a>
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="section" style="padding-top: 150px; padding-bottom: 60px;">
+        <div class="container" style="text-align: center;">
+            <span class="subheading">Visual Showcase</span>
+            <h1 style="margin-bottom: 24px;">Professional Facilities & Workflows</h1>
+            <p style="max-width: 700px; margin: 0 auto 60px;">A glimpse into our premium enterprise environments, secure
+                processing facilities, and high-end deposition settings.</p>
+
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/realtime.jpg" alt="Court Reporter">
+                    <div class="gallery-overlay">
+                        <h4>Real-time Reporting</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/litigation.jpg" alt="Corporate Team">
+                    <div class="gallery-overlay">
+                        <h4>Litigation Support Teams</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/formal.jpg" alt="Deposition">
+                    <div class="gallery-overlay">
+                        <h4>Formal Deposition Setting</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/secure.jpg" alt="Enterprise Office">
+                    <div class="gallery-overlay">
+                        <h4>Secure Facilities</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/digital-evidence.jpg" alt="Workflow">
+                    <div class="gallery-overlay">
+                        <h4>Digital Evidence Management</h4>
+                    </div>
+                </div>
+                <!-- Duplicate for masonry effect demonstration -->
+                <div class="gallery-item">
+                    <img src="images/strategy.jpg" alt="Strategy Meeting">
+                    <div class="gallery-overlay">
+                        <h4>Strategy Coordination</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Court Reporting Services (Section 2) -->
+    <section class="section section-bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <span class="subheading">Our Expertise</span>
+                <h2>Premium Court Reporting Services</h2>
+                <p>Industry-leading legal documentation powered by experienced professionals and secure enterprise
+                    technology.</p>
+            </div>
+            <div class="grid-3 expertise-grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fa-solid fa-microphone-lines"></i></div>
+                    <h3>Deposition Services</h3>
+                    <p>Accurate, verbatim recording of witness testimonies with expedited turnaround options for
+                        demanding litigation schedules.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background: rgba(0, 168, 150, 0.1); color: var(--accent-secondary);">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <h3>Arbitration & Mediation</h3>
+                    <p>Neutral, confidential reporting for arbitration hearings and mediation proceedings, ensuring an
+                        impeccable record.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon" style="background: rgba(214, 167, 86, 0.1); color: var(--accent-third);"><i
+                            class="fa-solid fa-video"></i></div>
+                    <h3>Video Depositions</h3>
+                    <p>High-definition video recording synchronized with certified transcripts for compelling courtroom
+                        presentations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Secure Workflow (Section 3) -->
+    <section class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <img src="images/secure-legal.jpg" alt=" Secure Legal Workflow"
+                        style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                </div>
+                <div style="padding-left: 20px;">
+                    <h2>Enterprise-Grade Security Protocol</h2>
+                    <p style="margin-bottom: 24px;">Our secure data pathways ensure that your sensitive legal documents
+                        and multimedia evidence are protected with end-to-end encryption at all times.</p>
+
+
+
+                    <ul style="list-style: none; padding-top: 10px;">
+                        <li style="margin-bottom: 16px; display: flex; align-items: flex-start; gap: 12px;">
+                            <i class="fa-solid fa-check-circle"
+                                style="color: var(--accent-primary); margin-top: 4px;"></i>
+                            <span><strong>End-to-End Encryption:</strong> Military-grade 256-bit AES encryption for all
+                                uploads and downloads.</span>
+                        </li>
+                        <li style="margin-bottom: 16px; display: flex; align-items: flex-start; gap: 12px;">
+                            <i class="fa-solid fa-check-circle"
+                                style="color: var(--accent-primary); margin-top: 4px;"></i>
+                            <span><strong>HIPAA & SOC2 Compliant:</strong> Meeting the highest regulatory standards for
+                                data protection.</span>
+                        </li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-primary" style="margin-top: 16px;">Submit Securely</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories / Testimonials (Section 4) -->
+    <section class="section section-bg-secondary">
+        <div class="container">
+            <div class="grid-2">
+                <div>
+                    <span class="subheading">Success Stories</span>
+                    <h2>Trusted By Top AmLaw 200 Firms</h2>
+                    <p style="margin-bottom: 30px;">"LexisTranscripts consistently delivers impeccable records under
+                        incredibly tight deadlines. Their secure portal and exceptional team make them an invaluable
+                        part of our litigation strategy."</p>
+
+                    <div class="success-author-info"
+                        style="display: flex; align-items: center; gap: 16px; margin-bottom: 40px;">
+                        <div
+                            style="width: 60px; height: 60px; border-radius: 50%; background: var(--bg-card); display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 24px; color: var(--accent-primary);">
+                            JD</div>
+                        <div>
+                            <h4 style="margin: 0; font-size: 18px;">Jonathan Davis</h4>
+                            <p style="margin: 0; font-size: 14px; color: var(--accent-third);">Senior Partner, Corporate
+                                Litigation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: relative;">
+                    <img src="images/success.jpg" alt="Corporate Legal Team"
+                        style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action (Section 5) -->
+    <section class="section" style="text-align: center;">
+        <div class="container" style="max-width: 800px;">
+            <span class="subheading">Get Started</span>
+            <h2 style="margin-bottom: 20px;">Secure Premium Litigation Support</h2>
+            <p style="margin-bottom: 40px; color: var(--text-secondary);">Partner with LexisTranscripts for certified
+                transcription and legal reporting. Guaranteed accuracy, secure protocols, and timely delivery.</p>
+            <div style="display: flex; justify-content: center; gap: 16px;">
+                <a href="register.html" class="btn btn-primary">Register Firm</a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-brand" style="margin-bottom: 20px;">
+                        <i class="fa-solid fa-scale-balanced" style="color: var(--accent-primary);"></i>
+                        <span>LexisTranscripts</span>
+                    </a>
+                    <p>Premium court reporting and enterprise legal transcription services ensuring precision, security,
+                        and absolute accuracy.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-icon" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html">Court Reporting</a></li>
+                        <li><a href="transcription-options.html">Legal Transcription</a></li>
+                        <li><a href="service-details.html">Video Depositions</a></li>
+                        <li><a href="services.html">Arbitration</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="industries.html">Industries</a></li>
+                        <li><a href="turnaround-times.html">Turnaround</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Client Access</h4>
+                    <ul>
+                        <li><a href="login.html">Secure Login</a></li>
+                        <li><a href="contact.html">Submit Case</a></li>
+                        <li><a href="register.html">Register Firm</a></li>
+                        <li><a href="faq.html">Support / FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 LexisTranscripts Enterprise Services. All Rights Reserved. Highly Confidential.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+    <button id="scrollTopBtn" title="Go to top" aria-label="Scroll to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+</body>
+
+</html>
