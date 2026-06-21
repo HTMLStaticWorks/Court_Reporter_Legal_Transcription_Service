@@ -1,0 +1,61 @@
+/* Dark Mode Override Options */
+
+body.dark-mode {
+  --bg-primary: #0A0D12;
+  --bg-secondary: #131922;
+  --bg-card: #1A2330;
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #C5CFDB;
+  
+  --border-color: rgba(255, 255, 255, 0.08);
+  --glow-effect: rgba(30, 94, 255, 0.15);
+}
+
+body.dark-mode .navbar {
+  background: rgba(10, 13, 18, 0.8);
+}
+
+body.dark-mode .navbar.scrolled {
+  background: rgba(10, 13, 18, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Dark mode overrides for mobile hamburger menu */
+body.dark-mode .nav-links {
+  background-color: #0A0D12 !important;
+}
+
+body.dark-mode .nav-links a:not(.btn) {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .nav-links a:not(.btn):hover,
+body.dark-mode .nav-links a:not(.btn).active {
+  color: var(--accent-primary) !important;
+}
+
+body.dark-mode .nav-close-btn {
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .mobile-nav-actions a[data-role="dark-toggle-mobile"],
+body.dark-mode .mobile-nav-actions a[data-role="rtl-toggle-mobile"] {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  color: #F8FAFC !important;
+}
+
+body.dark-mode .mobile-nav-actions a[data-role="dark-toggle-mobile"]:hover,
+body.dark-mode .mobile-nav-actions a[data-role="rtl-toggle-mobile"]:hover {
+  border-color: var(--accent-primary) !important;
+  color: var(--accent-primary) !important;
+  background-color: rgba(30, 94, 255, 0.1) !important;
+}
+
+body.dark-mode .feature-num {
+  opacity: 0.35;
+}
+
+body.dark-mode .feature-row:hover .feature-num {
+  opacity: 0.7;
+}

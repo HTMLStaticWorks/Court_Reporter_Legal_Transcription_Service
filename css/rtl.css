@@ -1,0 +1,87 @@
+/* RTL Styles for Court Reporter & Legal Transcription Service */
+
+body[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+body[dir="rtl"] .hero-image {
+  right: auto;
+  left: 0;
+  border-radius: 0 12px 12px 0;
+}
+
+body[dir="rtl"] .hero-image img {
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+}
+
+body[dir="rtl"] .hero::after {
+  right: auto;
+  left: 0;
+}
+
+/* Dropdown Menu alignment in RTL (Desktop) */
+body[dir="rtl"] .dropdown-menu {
+  left: auto;
+  right: 0;
+}
+
+body[dir="rtl"] .dropdown-menu a:hover {
+  padding-left: 20px;
+  padding-right: 24px;
+}
+
+/* Nav links chevron margin fix in RTL */
+body[dir="rtl"] .nav-links a i.fa-chevron-down {
+  margin-left: 0 !important;
+  margin-right: 4px !important;
+}
+
+@media (max-width: 1024px) {
+  /* Mobile menu RTL positioning overrides */
+  body[dir="rtl"] .nav-close-btn {
+    right: auto;
+    left: 24px;
+  }
+
+  body[dir="rtl"] .dropdown-menu {
+    border-left: none;
+    border-right: 2px solid var(--accent-primary);
+    margin-left: 0;
+    margin-right: 12px;
+    padding-left: 0;
+    padding-right: 4px;
+  }
+}
+
+/* How It Works section timeline RTL overrides */
+body[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 36px;
+}
+
+body[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 10px;
+}
+
+body[dir="rtl"] .timeline-dot {
+  left: auto;
+  right: -37px;
+}
+
+@media (max-width: 768px) {
+  body[dir="rtl"] {
+    text-align: center;
+  }
+  body[dir="rtl"] .footer {
+    text-align: right;
+  }
+  body[dir="rtl"] .footer-grid {
+    text-align: right !important;
+  }
+  body[dir="rtl"] .footer-brand {
+    align-items: flex-start;
+  }
+}
