@@ -2,7 +2,7 @@
   Court Reporter & Legal Transcription Service
   Premium Enterprise Stylesheet
 */
-
+s
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 
 :root {
@@ -1745,4 +1745,4 @@ select.form-control {
     display: block !important;
     text-align: left !important;
   }
-}
+}
