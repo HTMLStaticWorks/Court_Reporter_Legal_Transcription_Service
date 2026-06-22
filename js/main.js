@@ -1,9 +1,28 @@
 // main.js - Core functionality
 
+// Immediately restore saved direction and theme to prevent FOUC (Flash of Un-styled Content)
+(function() {
+  const savedDir = localStorage.getItem('site-dir') || 'ltr';
+  if (document.body) {
+    document.body.setAttribute('dir', savedDir);
+  }
+  const savedTheme = localStorage.getItem('site-theme') || 'light';
+  if (document.body) {
+    if (savedTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }
+})();
+
 document.addEventListener('DOMContentLoaded', () => {
   const toggleBtn = document.querySelector('.nav-toggle');
   const navLinks  = document.querySelector('.nav-links');
   const navbar    = document.querySelector('.navbar');
+
+  // Sync mobile/desktop theme toggles icon state on page load
+  updateAllDarkIcons();
 
   // ── Inject close button + mobile action row ────────────
   if (navLinks) {
@@ -37,7 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
           darkClone.addEventListener('click', (e) => {
             e.preventDefault();
             document.body.classList.toggle('dark-mode');
+            const isDark = document.body.classList.contains('dark-mode');
+            localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
             updateAllDarkIcons();
+            // Sync desktop icon if present
+            const deskDarkToggle = document.getElementById('dark-mode-toggle');
+            if (deskDarkToggle) {
+              const deskIcon = deskDarkToggle.querySelector('i');
+              if (deskIcon) {
+                deskIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+              }
+            }
           });
           utilsDiv.appendChild(darkClone);
         }
@@ -49,7 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
           rtlClone.addEventListener('click', (e) => {
             e.preventDefault();
             const cur = document.body.getAttribute('dir');
-            document.body.setAttribute('dir', cur === 'rtl' ? 'ltr' : 'rtl');
+            const newDir = cur === 'rtl' ? 'ltr' : 'rtl';
+            document.body.setAttribute('dir', newDir);
+            localStorage.setItem('site-dir', newDir);
           });
           utilsDiv.appendChild(rtlClone);
         }
@@ -148,6 +179,8 @@ document.addEventListener('DOMContentLoaded', () => {
     darkModeToggle.addEventListener('click', (e) => {
       e.preventDefault();
       document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('site-theme', isDark ? 'dark' : 'light');
       updateIcon();
       updateAllDarkIcons();
     });
@@ -159,7 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
     rtlToggle.addEventListener('click', (e) => {
       e.preventDefault();
       const currentDir = document.body.getAttribute('dir');
-      document.body.setAttribute('dir', currentDir === 'rtl' ? 'ltr' : 'rtl');
+      const newDir = currentDir === 'rtl' ? 'ltr' : 'rtl';
+      document.body.setAttribute('dir', newDir);
+      localStorage.setItem('site-dir', newDir);
     });
   }
 
@@ -213,3 +248,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
