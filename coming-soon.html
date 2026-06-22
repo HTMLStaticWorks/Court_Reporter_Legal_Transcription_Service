@@ -20,6 +20,18 @@
     </style>
 </head>
 <body dir="ltr">
+    <script>
+        (function() {
+            const savedDir = localStorage.getItem('site-dir') || 'ltr';
+            document.body.setAttribute('dir', savedDir);
+            const savedTheme = localStorage.getItem('site-theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        })();
+    </script>
 
     <div class="container" style="max-width: 600px;">
         <i class="fa-solid fa-hourglass-half pulse-element" style="font-size: 60px; color: var(--accent-secondary); margin-bottom: 30px; display: inline-block; padding: 20px; border-radius: 50%; background: rgba(0,168,150,0.1);"></i>

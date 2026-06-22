@@ -47,11 +47,22 @@
     </style>
 </head>
 
-<body dir="ltr">
+<body class="auth-page" dir="ltr">
+    <script>
+        (function() {
+            const savedDir = localStorage.getItem('site-dir') || 'ltr';
+            document.body.setAttribute('dir', savedDir);
+            const savedTheme = localStorage.getItem('site-theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        })();
+    </script>
 
     <!-- RTL and Dark Mode toggles positioned absolutely in top right -->
-    <div class="nav-actions"
-        style="position: absolute; top: 20px; right: 20px; display: flex; gap: 12px; align-items: center; z-index: 10;">
+    <div class="nav-actions">
         <a href="#" id="dark-mode-toggle" title="Toggle Light/Dark"><i class="fa-solid fa-moon"></i></a>
         <a href="#" id="rtl-toggle" title="Toggle RTL"><i class="fa-solid fa-right-left"></i></a>
     </div>
@@ -119,29 +130,24 @@
                 <button type="submit" class="btn btn-primary"
                     style="width: 100%; margin-top: 10px; margin-bottom: 20px;">Create Secure Account</button>
 
-
-
-                <div style="margin-top: 30px; text-align: center;">
-                    <div style="display: flex; align-items: center; margin-bottom: 24px;">
+                <div class="social-login-section" style="text-align: center;">
+                    <div class="social-login-divider" style="display: flex; align-items: center;">
                         <div style="flex-grow: 1; height: 1px; background: var(--border-color);"></div>
                         <span style="padding: 0 16px; font-size: 14px; color: var(--text-secondary);">Or continue
                             with</span>
                         <div style="flex-grow: 1; height: 1px; background: var(--border-color);"></div>
                     </div>
 
-                    <div style="display: flex; flex-direction: column; gap: 12px;">
-                        <button type="button" class="btn social-login-btn"
-                            style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                    <div class="social-actions-container">
+                        <button type="button" class="btn social-login-btn">
                             <i class="fa-brands fa-google"></i>
                             <span>Google</span>
                         </button>
-                        <button type="button" class="btn social-login-btn"
-                            style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                        <button type="button" class="btn social-login-btn">
                             <i class="fa-brands fa-facebook-f"></i>
                             <span>Facebook</span>
                         </button>
-                        <button type="button" class="btn social-login-btn"
-                            style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 10px;">
+                        <button type="button" class="btn social-login-btn">
                             <i class="fa-brands fa-apple"></i>
                             <span>Apple</span>
                         </button>

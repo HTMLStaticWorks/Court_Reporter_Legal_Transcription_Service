@@ -1120,6 +1120,24 @@
             }
         }
 
+        @media (max-width: 768px) {
+            .cta-form-info {
+                text-align: center;
+            }
+            .cta-features-list {
+                align-items: center;
+            }
+            .cta-feature-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .cta-feature-item h4,
+            .cta-feature-item p {
+                text-align: center;
+            }
+        }
+
         @media (max-width: 576px) {
             .form-row {
                 grid-template-columns: 1fr;
@@ -1128,6 +1146,16 @@
             .security-grid {
                 grid-template-columns: 1fr;
             }
+        }
+
+        /* Prevent oval shape morphing (flex-shrink) */
+        .author-avatar,
+        .pulse-dot,
+        .live-dot-red,
+        .indicator-dot,
+        .dash-dots .dot,
+        .dash-profile img {
+            flex-shrink: 0 !important;
         }
     </style>
 </head>
@@ -1279,7 +1307,7 @@
                 
                 <div class="tab-content active" id="depo-room">
                     <div class="grid-2 align-items-center">
-                        <div class="tab-text" style="text-align: left;">
+                        <div class="tab-text">
                             <h3>High-Definition Remote Deposition Suite</h3>
                             <p>Conduct secure, recordable virtual depositions with low-latency streaming text and private breakout rooms for counsel consultation. Built strictly under HIPAA-compliant security layers.</p>
                             <ul class="feature-bullets">
@@ -1313,7 +1341,7 @@
 
                 <div class="tab-content" id="ai-insights">
                     <div class="grid-2 align-items-center">
-                        <div class="tab-text" style="text-align: left;">
+                        <div class="tab-text">
                             <h3>AI-Powered Transcript Search & Analytics</h3>
                             <p>Scan thousands of transcript pages instantly. Extract semantic insights, trace key witness testimonies, and auto-generate deposition summaries with citation links to the original record.</p>
                             <ul class="feature-bullets">
@@ -1343,7 +1371,7 @@
 
                 <div class="tab-content" id="integrations">
                     <div class="grid-2 align-items-center">
-                        <div class="tab-text" style="text-align: left;">
+                        <div class="tab-text">
                             <h3>Seamless Litigation Workflow Integrations</h3>
                             <p>Bridge the gap between transcription and litigation software. Ingest transcripts and exhibits directly into Relativity, Clio, Salesforce, and enterprise document systems without formatting loss.</p>
                             <ul class="feature-bullets">
@@ -1379,7 +1407,7 @@
             </div>
             
             <div class="calc-card">
-                <div class="calc-inputs" style="text-align: left;">
+                <div class="calc-inputs">
                     <div class="form-group">
                         <label for="service-type">Service Type</label>
                         <select id="service-type" class="form-control" onchange="calculateCost()">
@@ -1454,7 +1482,7 @@
                             <div class="case-card">
                                 <div class="case-quote">"Integrating LexisTranscripts with Relativity saved our trial prep team over 40 hours of manual transcript indexing and search time."</div>
                                 <div class="case-author">
-                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/avatar.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Elizabeth Sterling"></div>
+                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/avatar.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Elizabeth Sterling" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' viewBox=\'0 0 48 48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%231E5EFF\'/><text x=\'50%\' y=\'55%\' font-size=\'16\' fill=\'white\' font-family=\'Arial\' text-anchor=\'middle\' dominant-baseline=\'middle\'>ES</text></svg>'"></div>
                                     <div class="author-info">
                                         <span class="author-name">Elizabeth Sterling, Esq.</span>
                                         <span class="author-title">Partner, Sterling &amp; Vance LLP (AmLaw 100)</span>
@@ -1467,7 +1495,7 @@
                             <div class="case-card">
                                 <div class="case-quote">"The interactive digital exhibit binder allowed us to manage 120+ documents seamlessly during a complex remote deposition."</div>
                                 <div class="case-author">
-                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/domain-expert.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Marcus Finch"></div>
+                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/domain-expert.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Marcus Finch" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' viewBox=\'0 0 48 48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%2300A896\'/><text x=\'50%\' y=\'55%\' font-size=\'16\' fill=\'white\' font-family=\'Arial\' text-anchor=\'middle\' dominant-baseline=\'middle\'>MF</text></svg>'"></div>
                                     <div class="author-info">
                                         <span class="author-name">Marcus Finch</span>
                                         <span class="author-title">Director of Litigation Support, Apex Corp.</span>
@@ -1480,7 +1508,7 @@
                             <div class="case-card">
                                 <div class="case-quote">"We received daily copy transcripts within 3 hours of adjournment every day of our 4-week arbitration. Exceptional speed."</div>
                                 <div class="case-author">
-                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/strategy.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Raymond Thorne"></div>
+                                    <div class="author-avatar" style="overflow: hidden; padding: 0;"><img src="images/strategy.jpg" style="width: 100%; height: 100%; object-fit: cover;" alt="Raymond Thorne" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'48\' height=\'48\' viewBox=\'0 0 48 48\'><circle cx=\'24\' cy=\'24\' r=\'24\' fill=\'%234B83FF\'/><text x=\'50%\' y=\'55%\' font-size=\'16\' fill=\'white\' font-family=\'Arial\' text-anchor=\'middle\' dominant-baseline=\'middle\'>RT</text></svg>'"></div>
                                     <div class="author-info">
                                         <span class="author-name">Hon. Raymond Thorne (Ret.)</span>
                                         <span class="author-title">Arbitrator, Thorne ADR Group</span>

@@ -13,6 +13,18 @@
     <link rel="canonical" href="https://lexistranscripts.com/service-details.html">
 </head>
 <body dir="ltr">
+    <script>
+        (function() {
+            const savedDir = localStorage.getItem('site-dir') || 'ltr';
+            document.body.setAttribute('dir', savedDir);
+            const savedTheme = localStorage.getItem('site-theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        })();
+    </script>
     
     <!-- Navbar -->
     <nav class="navbar">
@@ -24,7 +36,7 @@
 
             <ul class="nav-links">
                 <li class="desktop-only nav-item">
-                    <a href="#" class="">Home <i class="fa-solid fa-chevron-down" style="font-size: 10px; margin-left: 4px;"></i></a>
+                    <a href="#" class="">Home <i class="fa-solid fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="dropdown-menu">
                         <a href="index.html">Home 1</a>
                         <a href="home-2.html">Home 2</a>

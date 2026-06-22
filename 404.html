@@ -20,6 +20,18 @@
     </style>
 </head>
 <body dir="ltr">
+    <script>
+        (function() {
+            const savedDir = localStorage.getItem('site-dir') || 'ltr';
+            document.body.setAttribute('dir', savedDir);
+            const savedTheme = localStorage.getItem('site-theme') || 'light';
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        })();
+    </script>
 
     <div class="container" style="max-width: 600px;">
         <i class="fa-solid fa-file-circle-xmark" style="font-size: 80px; color: var(--accent-primary); margin-bottom: 24px;"></i>

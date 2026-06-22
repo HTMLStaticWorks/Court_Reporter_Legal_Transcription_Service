@@ -76,45 +76,36 @@
             <div style="max-width: 900px; margin: 0 auto;">
                 <!-- Timeline items -->
                 <div style="display: flex; flex-direction: column; gap: 20px;">
-                    <div
-                        style="background: var(--bg-card); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent-third); display: flex; align-items: center; justify-content: space-between; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                    <div class="turnaround-card same-day">
                         <div>
-                            <h3 style="color: var(--accent-third); margin-bottom: 8px;">Same Day Service</h3>
-                            <p style="margin: 0; color: var(--text-secondary);">Rough draft delivered at the conclusion
-                                of the proceedings, final certified transcript within 12 hours.</p>
+                            <h3 style="margin-bottom: 8px;">Same Day Service</h3>
+                            <p>Rough draft delivered at the conclusion of the proceedings, final certified transcript within 12 hours.</p>
                         </div>
-                        <i class="fa-solid fa-bolt" style="font-size: 32px; color: var(--accent-third);"></i>
+                        <i class="fa-solid fa-bolt"></i>
                     </div>
 
-                    <div
-                        style="background: var(--bg-card); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent-primary); display: flex; align-items: center; justify-content: space-between; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                    <div class="turnaround-card expedited">
                         <div>
-                            <h3 style="color: var(--accent-primary); margin-bottom: 8px;">24-Hour Expedited</h3>
-                            <p style="margin: 0; color: var(--text-secondary);">Final certified transcripts delivered
-                                electronically by 5:00 PM the following business day.</p>
+                            <h3 style="margin-bottom: 8px;">24-Hour Expedited</h3>
+                            <p>Final certified transcripts delivered electronically by 5:00 PM the following business day.</p>
                         </div>
-                        <i class="fa-solid fa-clock" style="font-size: 32px; color: var(--accent-primary);"></i>
+                        <i class="fa-solid fa-clock"></i>
                     </div>
 
-                    <div
-                        style="background: var(--bg-card); padding: 30px; border-radius: 8px; border-left: 4px solid var(--accent-secondary); display: flex; align-items: center; justify-content: space-between; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                    <div class="turnaround-card rush">
                         <div>
-                            <h3 style="color: var(--accent-secondary); margin-bottom: 8px;">48-Hour Rush</h3>
-                            <p style="margin: 0; color: var(--text-secondary);">Certified transcripts delivered securely
-                                within two business days.</p>
+                            <h3 style="margin-bottom: 8px;">48-Hour Rush</h3>
+                            <p>Certified transcripts delivered securely within two business days.</p>
                         </div>
-                        <i class="fa-solid fa-stopwatch" style="font-size: 32px; color: var(--accent-secondary);"></i>
+                        <i class="fa-solid fa-stopwatch"></i>
                     </div>
 
-                    <div
-                        style="background: var(--bg-card); padding: 30px; border-radius: 8px; border-left: 4px solid var(--border-color); display: flex; align-items: center; justify-content: space-between; text-align: left; box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-top: 1px solid var(--border-color); border-right: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+                    <div class="turnaround-card standard">
                         <div>
-                            <h3 style="color: var(--text-primary); margin-bottom: 8px;">Standard Delivery</h3>
-                            <p style="margin: 0; color: var(--text-secondary);">Our reliable baseline service. Delivered
-                                in 5 to 7 business days.</p>
+                            <h3 style="margin-bottom: 8px;">Standard Delivery</h3>
+                            <p>Our reliable baseline service. Delivered in 5 to 7 business days.</p>
                         </div>
-                        <i class="fa-solid fa-calendar-check"
-                            style="font-size: 32px; color: var(--text-secondary);"></i>
+                        <i class="fa-solid fa-calendar-check"></i>
                     </div>
                 </div>
             </div>
@@ -134,7 +125,7 @@
                 <p>Industry-leading legal documentation powered by experienced professionals and secure enterprise
                     technology.</p>
             </div>
-            <div class="grid-3">
+            <div class="grid-3 premium-services-grid">
                 <div class="card">
                     <div class="card-icon"><i class="fa-solid fa-microphone-lines"></i></div>
                     <h3>Deposition Services</h3>
@@ -164,7 +155,7 @@
     <section class="section section-bg-secondary">
         <div class="container">
             <div class="grid-2">
-                <div style="padding-right: 20px;">
+                <div class="scoping-text-col" style="padding-right: 20px;">
                     <h2>Real-Time Scoping Workflow</h2>
                     <p style="margin-bottom: 24px;">To guarantee Same Day and 24-Hour turnaround times without
                         compromising accuracy, we use a synchronized real-time scoping pipeline. This team-based
@@ -210,7 +201,7 @@
 
             <div
                 style="overflow-x: auto; border: 1px solid var(--border-color); border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); background: var(--bg-card);">
-                <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 15px;">
+                <table class="sla-table">
                     <thead>
                         <tr style="border-bottom: 1px solid var(--border-color); background: rgba(30, 94, 255, 0.03);">
                             <th style="padding: 20px 24px; font-weight: 600; color: var(--text-primary);">Service Tier
