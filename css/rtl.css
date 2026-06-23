@@ -39,6 +39,7 @@ body[dir="rtl"] .nav-links a i.fa-chevron-down {
 }
 
 @media (max-width: 1024px) {
+
   /* Mobile menu RTL positioning overrides */
   body[dir="rtl"] .nav-close-btn {
     right: auto;
@@ -75,12 +76,15 @@ body[dir="rtl"] .timeline-dot {
   body[dir="rtl"] {
     text-align: center;
   }
+
   body[dir="rtl"] .footer {
     text-align: right;
   }
+
   body[dir="rtl"] .footer-grid {
     text-align: right !important;
   }
+
   body[dir="rtl"] .footer-brand {
     align-items: flex-start;
   }
@@ -98,6 +102,7 @@ body[dir="rtl"] .auth-page .nav-actions {
 }
 
 @media (max-width: 1024px) {
+
   body[dir="rtl"].auth-page .nav-actions,
   body[dir="rtl"] .auth-page .nav-actions {
     right: auto !important;
@@ -106,6 +111,7 @@ body[dir="rtl"] .auth-page .nav-actions {
 }
 
 @media (max-width: 768px) {
+
   body[dir="rtl"].auth-page .nav-actions,
   body[dir="rtl"] .auth-page .nav-actions {
     right: auto !important;
@@ -137,21 +143,36 @@ body[dir="rtl"] .turnaround-card {
   text-align: right !important;
   border-left: 1px solid var(--border-color) !important;
 }
-body[dir="rtl"] .turnaround-card.same-day { border-right: 4px solid var(--accent-third) !important; }
-body[dir="rtl"] .turnaround-card.expedited { border-right: 4px solid var(--accent-primary) !important; }
-body[dir="rtl"] .turnaround-card.rush { border-right: 4px solid var(--accent-secondary) !important; }
-body[dir="rtl"] .turnaround-card.standard { border-right: 4px solid var(--border-color) !important; }
+
+body[dir="rtl"] .turnaround-card.same-day {
+  border-right: 4px solid var(--accent-third) !important;
+}
+
+body[dir="rtl"] .turnaround-card.expedited {
+  border-right: 4px solid var(--accent-primary) !important;
+}
+
+body[dir="rtl"] .turnaround-card.rush {
+  border-right: 4px solid var(--accent-secondary) !important;
+}
+
+body[dir="rtl"] .turnaround-card.standard {
+  border-right: 4px solid var(--border-color) !important;
+}
 
 /* Specs Section alignment and card margins in RTL (Request 5 & 6) */
 body[dir="rtl"] .specs-grid {
   text-align: right !important;
 }
+
 body[dir="rtl"] .specs-card p {
   text-align: right !important;
 }
+
 body[dir="rtl"] .specs-card h3 {
   justify-content: flex-start !important;
 }
+
 body[dir="rtl"] .specs-card h3 i {
   margin-right: 0 !important;
   margin-left: 8px !important;
@@ -183,13 +204,394 @@ body[dir="rtl"] .sla-table td {
 
 /* Mobile view stacking for pricing calculator results details in RTL */
 @media (max-width: 768px) {
+
   body[dir="rtl"] .detail-label,
   body[dir="rtl"] .detail-val {
     text-align: right !important;
   }
+
   body[dir="rtl"] .detail-item {
     align-items: flex-end !important;
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 1 — Home 2 RTL: "Trusted by Elite Litigation Teams" carousel card fix
+   Also fixes Hero trust-pill indicators and dashboard layout in RTL.
+   ═══════════════════════════════════════════════════════════════════════════ */
 
+/* Ensure carousel cards are fully visible in RTL */
+body[dir="rtl"] .carousel-track {
+  direction: ltr; /* keep LTR transform so slide translation works correctly */
+}
+
+body[dir="rtl"] .case-card {
+  direction: rtl;
+  text-align: right;
+}
+
+/* Hero trust pills — reverse icon+text order so icon reads on the right */
+body[dir="rtl"] .hero-trust-indicators {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+body[dir="rtl"] .trust-pill {
+  flex-direction: row-reverse;
+}
+
+/* Tech badge direction */
+body[dir="rtl"] .tech-badge {
+  flex-direction: row-reverse;
+}
+
+/* Dashboard mockup RTL — sidebar border swap, nav items, content */
+body[dir="rtl"] .dash-sidebar {
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+body[dir="rtl"] .dash-nav-item {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+
+body[dir="rtl"] .dash-content {
+  text-align: right;
+}
+
+body[dir="rtl"] .depo-meta {
+  flex-direction: row-reverse;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 2 — Home 2 RTL: "Schedule a Live" section — heading & content alignment
+   Both "Instant Account Setup" and "Custom SLA Options" headings + descriptions
+   must start from the same right-edge vertical line in RTL mode.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+body[dir="rtl"] .cta-form-info {
+  text-align: right !important;
+}
+
+body[dir="rtl"] .cta-form-info h2,
+body[dir="rtl"] .cta-form-info > p {
+  text-align: right !important;
+}
+
+body[dir="rtl"] .cta-features-list {
+  align-items: flex-start !important;
+}
+
+/* Each feature row: icon on right, text on left — both items start at same edge */
+body[dir="rtl"] .cta-feature-item {
+  flex-direction: row-reverse !important;
+  align-items: flex-start !important;
+  width: 100%;
+}
+
+body[dir="rtl"] .cta-feature-item > div {
+  text-align: right;
+}
+
+body[dir="rtl"] .cta-feature-item h4,
+body[dir="rtl"] .cta-feature-item p {
+  text-align: right !important;
+}
+
+@media (max-width: 768px) {
+  body[dir="rtl"] .cta-feature-item {
+    flex-direction: column !important;
+    align-items: flex-end !important;
+  }
+
+  body[dir="rtl"] .cta-form-info {
+    text-align: right !important;
+  }
+
+  body[dir="rtl"] .cta-features-list {
+    align-items: flex-end !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 3 — Services page RTL: List bullet/check icon and text alignment
+   Every list item icon and its text must start from the same horizontal
+   position, with uniform indentation, spacing and padding.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Target all inline-styled flex list items sitewide in RTL */
+body[dir="rtl"] ul li[style*="display: flex"] {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+body[dir="rtl"] ul li[style*="display: flex"] i {
+  flex-shrink: 0;
+}
+
+body[dir="rtl"] ul li[style*="display: flex"] span {
+  text-align: right;
+}
+
+/* Specifically target services QC/scoping text columns */
+body[dir="rtl"] .qc-text-col ul li,
+body[dir="rtl"] .scoping-text-col ul li {
+  flex-direction: row-reverse !important;
+  text-align: right !important;
+}
+
+body[dir="rtl"] .qc-text-col ul li i,
+body[dir="rtl"] .scoping-text-col ul li i {
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 4 — Mobile view: Hero section dashboard-mockup card overflow fix
+   Prevent the card from overflowing or touching the right container edge.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Contain hero visual column */
+  .hero-visual {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+
+  /* Dashboard card must not exceed column width */
+  .dashboard-mockup {
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow: hidden !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Prevent hero-split from allowing horizontal scroll */
+  .hero-split {
+    overflow-x: hidden;
+  }
+
+  /* Narrow the sidebar so content doesn't overflow */
+  .dash-sidebar {
+    width: 90px !important;
+    min-width: 0 !important;
+    flex-shrink: 0;
+  }
+
+  .dash-nav-item {
+    font-size: 10px !important;
+    padding: 6px !important;
+    gap: 4px !important;
+  }
+
+  /* Dashboard content area — allow it to shrink */
+  .dash-content {
+    padding: 12px !important;
+    overflow: hidden;
+    min-width: 0;
+    flex: 1;
+  }
+
+  .depo-transcript-box {
+    font-size: 10px !important;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  .dash-dropzone span {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-mockup {
+    height: 360px !important;
+  }
+
+  .dash-sidebar {
+    width: 70px !important;
+  }
+
+  .dash-nav-item {
+    font-size: 9px !important;
+    padding: 5px 4px !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 5 — Mobile view: Home 2, High-Definition section feature-bullets
+   All circle-check icons and their text must start at the same left edge,
+   with uniform gap, padding and indentation on every list item.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .feature-bullets {
+    align-items: flex-start !important;
+    padding: 0 !important;
+  }
+
+  .feature-bullets li {
+    width: 100%;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    text-align: left;
+  }
+
+  /* Fixed-width icon column so all text starts at same position */
+  .feature-bullets li i {
+    flex-shrink: 0 !important;
+    min-width: 18px;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  /* Tab section text — left-aligned on mobile/tablet */
+  .tab-text {
+    text-align: left;
+  }
+
+  /* RTL flip */
+  body[dir="rtl"] .feature-bullets {
+    align-items: flex-end !important;
+  }
+
+  body[dir="rtl"] .feature-bullets li {
+    flex-direction: row-reverse;
+    text-align: right;
+  }
+
+  body[dir="rtl"] .tab-text {
+    text-align: right;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 6 — Mobile & Tablet: Industries page, Direct Integration section
+   Align icons, headings and description text consistently — same start edge
+   for every row, with uniform spacing between icon → heading → description.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  /* Remove asymmetric padding that causes misalignment when grid stacks */
+  .grid-2 > div[style*="padding-right: 20px"],
+  .grid-2 > div[style*="padding-left: 20px"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+
+  /* Normalize the list container */
+  .grid-2 ul[style*="list-style: none"] {
+    padding-top: 8px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Each list item: ensure flex with top-aligned icon */
+  .grid-2 ul[style*="list-style: none"] li {
+    align-items: flex-start !important;
+    gap: 12px !important;
+    display: flex !important;
+  }
+
+  /* Icon column: fixed width so all text lines up at the same start */
+  .grid-2 ul[style*="list-style: none"] li i {
+    flex-shrink: 0 !important;
+    width: 24px !important;
+    min-width: 24px !important;
+    text-align: center !important;
+    margin-top: 3px !important;
+    font-size: 16px !important;
+  }
+
+  /* Text column: flex:1 so it fills remaining width uniformly */
+  .grid-2 ul[style*="list-style: none"] li span {
+    flex: 1;
+    line-height: 1.5;
+    text-align: left;
+    word-break: break-word;
+  }
+}
+
+/* RTL flip for industries lists */
+@media (max-width: 1024px) {
+  body[dir="rtl"] .grid-2 ul[style*="list-style: none"] li {
+    flex-direction: row-reverse !important;
+    text-align: right !important;
+  }
+
+  body[dir="rtl"] .grid-2 ul[style*="list-style: none"] li span {
+    text-align: right;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   FIX 7 — Mobile view: Gallery page, Enterprise section card alignment
+   Align icons, headings and descriptions consistently across all cards.
+   All headings and all descriptions must start at the same horizontal edge.
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 768px) {
+  /* Gallery expertise grid — override global mobile text-align:center */
+  .expertise-grid .card {
+    text-align: left !important;
+  }
+
+  .expertise-grid .card .card-icon {
+    margin-left: 0 !important;
+    margin-right: auto !important;
+  }
+
+  .expertise-grid .card h3 {
+    text-align: left !important;
+  }
+
+  .expertise-grid .card p {
+    text-align: left !important;
+  }
+
+  /* Gallery secure workflow list items */
+  .grid-2 > div[style*="padding-left: 20px"] ul[style*="list-style: none"] li {
+    align-items: flex-start !important;
+    gap: 12px !important;
+  }
+
+  .grid-2 > div[style*="padding-left: 20px"] ul[style*="list-style: none"] li i {
+    flex-shrink: 0 !important;
+    min-width: 20px !important;
+    text-align: center !important;
+    margin-top: 3px !important;
+  }
+
+  .grid-2 > div[style*="padding-left: 20px"] ul[style*="list-style: none"] li span {
+    flex: 1;
+    line-height: 1.5;
+    text-align: left;
+  }
+}
+
+/* RTL flip for gallery enterprise section */
+@media (max-width: 768px) {
+  body[dir="rtl"] .expertise-grid .card {
+    text-align: right !important;
+  }
+
+  body[dir="rtl"] .expertise-grid .card h3,
+  body[dir="rtl"] .expertise-grid .card p {
+    text-align: right !important;
+  }
+
+  body[dir="rtl"] .grid-2 > div[style*="padding-left: 20px"] ul[style*="list-style: none"] li {
+    flex-direction: row-reverse !important;
+  }
+
+  body[dir="rtl"] .grid-2 > div[style*="padding-left: 20px"] ul[style*="list-style: none"] li span {
+    text-align: right;
+  }
+}
