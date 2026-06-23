@@ -1104,6 +1104,22 @@
 
             .hero-trust-indicators {
                 justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            /* FIX 4: Contain the hero visual so dashboard card never overflows */
+            .hero-visual {
+                width: 100%;
+                max-width: 100%;
+                overflow: hidden;
+                box-sizing: border-box;
+            }
+
+            .dashboard-mockup {
+                max-width: 100% !important;
+                width: 100% !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
             }
 
             .cta-form-wrapper {
@@ -1170,6 +1186,32 @@
             }
         }
 
+        /* FIX 1+2: RTL hero-text / hero-btns / trust-indicators alignment */
+        body[dir="rtl"] .hero-text {
+            text-align: right;
+        }
+
+        body[dir="rtl"] .hero-btns {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        }
+
+        @media (max-width: 1024px) {
+            body[dir="rtl"] .hero-text {
+                text-align: right;
+            }
+
+            body[dir="rtl"] .hero-btns {
+                justify-content: center;
+                flex-direction: row-reverse;
+            }
+
+            body[dir="rtl"] .hero-trust-indicators {
+                justify-content: center;
+                flex-direction: row-reverse;
+            }
+        }
+
         /* Prevent oval shape morphing (flex-shrink) */
         .author-avatar,
         .pulse-dot,
@@ -1178,6 +1220,18 @@
         .dash-dots .dot,
         .dash-profile img {
             flex-shrink: 0 !important;
+        }
+
+        /* Card content inside carousel uses RTL */
+        body[dir="rtl"] .case-card {
+            direction: rtl;
+            text-align: right;
+        }
+
+        body[dir="rtl"] .case-author {
+            direction: rtl;
+            text-align: right;
+            justify-content: flex-end;
         }
     </style>
 </head>
@@ -1679,22 +1733,7 @@
                                 style="width: 100%; border-radius: 12px; border: 1px solid var(--border-color); box-shadow: 0 10px 20px rgba(0,0,0,0.1);">
                         </div>
 
-                        <div class="cta-features-list">
-                            <div class="cta-feature-item">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <h4>Instant Account Setup</h4>
-                                    <p>Get secure portal access and dispatch stenographers within minutes.</p>
-                                </div>
-                            </div>
-                            <div class="cta-feature-item">
-                                <i class="fa-solid fa-circle-check"></i>
-                                <div>
-                                    <h4>Custom SLA Options</h4>
-                                    <p>Select turnaround times from same-day copy to standard delivery.</p>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
 
                     <div class="cta-form-card">
@@ -1872,7 +1911,9 @@
         }
 
         function updateCarousel() {
-            const percentage = -currentSlideIndex * 33.333;
+            // In RTL mode the flex track flows right→left, so we must flip the sign
+            const isRTL = document.body.getAttribute('dir') === 'rtl';
+            const percentage = (isRTL ? 1 : -1) * currentSlideIndex * 33.333;
             track.style.transform = `translateX(${percentage}%)`;
 
             indicators.forEach((dot, idx) => {
